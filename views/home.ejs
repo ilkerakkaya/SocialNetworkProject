@@ -1,0 +1,104 @@
+<%- include('partials/header'); -%>
+
+
+<nav class="navbar navbar-light bg-white">
+    <a href="#" class="navbar-brand">NeighborBook</a>
+    <img src="" alt="">
+    <form class="form-inline">
+        <div class="input-group">
+            <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-primary" type="button" id="button-addon2">
+                    <i class="fa fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </form>
+</nav>
+
+
+<div class="container-fluid gedf-wrapper">
+    <div class="row">
+        <div class="col-md-3">
+            
+        </div>
+        <div class="col-md-6 gedf-main">
+
+            <!--- \\\\\\\Post-->
+            <div class="card gedf-card">
+                <div class="card-header">
+                    
+                </div>
+                <form action="/home" method="POST">
+                <div class="card-body">
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+                            <div class="form-group">
+                                <label class="sr-only" for="message">post</label>
+                            
+                                <textarea class="form-control" name="post" id="message" rows="3" placeholder="What are you thinking?"></textarea>
+                            </div>
+                            <button class="btn btn-primary" type="submit">Post</button>
+
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+            </form>
+            </div>
+
+            <% users.forEach((user)=>{ %>
+            <div class="card gedf-card">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="mr-2">
+                                <img class="rounded-circle" width="45" src="<%=user._username.picture%>" alt="">
+                            </div>
+                            <div class="ml-2">
+                                <div class="h5 m-0"><%=user._username.username%></div>
+                               
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                </div>
+                <div class="card-body">
+                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>  
+                        <%let postTime= new moment().diff(user.time); %>
+                        <% if(postTime>60000 && postTime<3600000){ %>
+                                <%= (postTime/60000).toFixed(0); %> minute ago
+                                    <%}else{ if (postTime>=3600000 && postTime<86400000){%>
+                                        <%= (postTime/3600000).toFixed(0); %> hour ago
+                                            <%}else{ if(postTime>=86400000){ %>
+                                                 <%= (postTime/86400000).toFixed(0); %> day ago
+                                                     <%}else{ %>
+                                                         a while ago
+                                                             <% }}}%></div>
+
+                    <p class="card-text">
+                         <%= user.post%>
+                    </p>      
+                </div>
+                <div class="card-footer">
+                    <a href="/home/like/<%= user._id%>" class="card-link"><i class="far fa-thumbs-up"></i> <%= user.like%></a>
+                    <a href="/home/dislike/<%= user._id%>" class="card-link"><i class="far fa-thumbs-down"></i><%= user.dislike%></a>
+                    <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
+                    <a href="#" class="card-link"><i class="fas fa-share"></i> Share</a>
+                </div>
+            </div>
+           
+            <% }) %>
+           
+
+        </div>
+        <div class="col-md-3">
+            
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer'); -%>
+
