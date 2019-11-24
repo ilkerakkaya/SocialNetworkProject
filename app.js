@@ -127,7 +127,7 @@ app.get('/auth/facebook/home',
   app.get("/", (req, res) => {
     res.render("login");
   });
-// Login yapmak istediginde username veya password bos mu die bakiyoruz. Bos ise Username and Password cannot be empty ifadesi cikiyor.eger usernmae ve passwordda sknti yoksa ve kisi bulundu ise acilsin cennetin kapilari deyip home page a giris izni verilir. ancak kisi bulunmadi ise "401 Unauthorized" uyarisi cikar.
+// Login page check
 app.post("/", (req, res) => {
   const user =new User({
     username: req.body.username,
@@ -161,7 +161,7 @@ app.get("/register",(req, res)=>{
 
 
 app.post("/register", (req, res) => {
-  //register sayfasinda ki bilgileri burasi tutar ve if kisminda isleme tabi tutar. eger sartlar saglaniyorsa gecis izni verilir.
+  //register page info keep
 
   const usernameNew = req.body.username;
   const passwordNew = req.body.password;
@@ -173,7 +173,7 @@ app.post("/register", (req, res) => {
       if (!validator.isEmpty(passwordNew)) {
         if (validator.isLength(usernameNew, { min: 3, max:21 })) {
           if (validator.isLength(passwordNew, { min: 6, max:20 })) {
-            //  validoter'da hersey tmm oldugunda, eger girilen bilgiler databasede daha once eklenmisse veya eklenmemisse findOne bunu kontrol eder. username email kontrollerini yaparki ikinci asamada database e eklesin, ayni bilgiler girilmisse bunu engeller.
+            //  validoter check
             User.findOne(
               { username: usernameNew },
               (err, foundUser) => {
@@ -199,8 +199,6 @@ app.post("/register", (req, res) => {
     }else{console.log('4');}
   }else{console.log('5');}
 });
-
-// home icersinde yeni bir post yapmak icin, o postun ID si lazim bundan dolayi newPostId ile ariyoruz ve postumuzu cagiriyoruz.
 
 
 // GET post==
