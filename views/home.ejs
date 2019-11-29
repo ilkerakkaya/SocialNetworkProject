@@ -2,8 +2,39 @@
 
 
 <nav class="navbar navbar-light bg-white">
-    <a href="#" class="navbar-brand">NeighborBook</a>
-    <img src="" alt="">
+        <div class="align-baseline">
+                <table class="table table-borderless">
+                    
+                    <tbody>
+                        
+                        <tr>
+                            <td class="p-0">
+                                <a href="#" class="navbar-brand" name='userName'>
+                                    <i class="fas fa-home"></i>
+                                </a>
+                            </td>
+                            <td class="p-0">
+                                <img class="rounded-circle" width="45" src="https://picsum.photos/50/50" />
+                            </td>
+                            <td class="p-0 pl-2">
+                                <p class="mb-0">
+                                    <%=loginInf.username%>
+                                </p>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+
+            </div>
+
+            <div class="align-middle pl-5 ml-5"><a href="#" class="navbar-brand pl-5 ">NeighborBook</a>
+                <img src="" alt=""></div>
+    
+    
     <form class="form-inline">
         <div class="input-group">
             <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
@@ -11,10 +42,31 @@
                 <button class="btn btn-outline-primary" type="button" id="button-addon2">
                     <i class="fa fa-search"></i>
                 </button>
+
+                <div class="align-text-bottom">
+                        <table class="table table-borderless">
+                            
+                            <tbody>
+                                
+                                <tr>
+                                    <td class="p-0">
+                                        
+                                    </td>
+                                    
+                                    <td class="p-0 pl-2">
+                                        
+                                        <a href="/logout" style="font-size: small;"><i class="fas fa-sign-out-alt "></i>logout</a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
             </div>
         </div>
     </form>
 </nav>
+
+
 
 
 <div class="container-fluid gedf-wrapper">
@@ -66,7 +118,7 @@
 
                 </div>
                 <div class="card-body">
-                    <div class="text-muted h7 mb-2"> <i class="fa fa-clock-o"></i>  
+                    <div class="text-muted h7 mb-2"> <i class="far fa-clock"></i>  
                         <%let postTime= new moment().diff(user.time); %>
                         <% if(postTime>60000 && postTime<3600000){ %>
                                 <%= (postTime/60000).toFixed(0); %> minute ago
@@ -85,8 +137,8 @@
                 <div class="card-footer">
                     <a href="/home/like/<%= user._id%>" class="card-link"><i class="far fa-thumbs-up"></i> <%= user.like%></a>
                     <a href="/home/dislike/<%= user._id%>" class="card-link"><i class="far fa-thumbs-down"></i><%= user.dislike%></a>
-                    <a href="#" class="card-link"><i class="fa fa-comment"></i> Comment</a>
-                    <a href="#" class="card-link"><i class="fas fa-share"></i> Share</a>
+                    
+                    <a href="/home/Delete/<%= user._id%>" class="card-link"><i class="fas fa-trash-alt"></i> Delete </a>
                 </div>
             </div>
            

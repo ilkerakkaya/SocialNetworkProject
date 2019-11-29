@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/all.css">
-  <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="activepage" content="<%=menuId%>" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/all.css" />
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css" />
+   
+    
 
-  
-<link rel="stylesheet" href="css/login.css">
-</head>
-<body>
+
+
+   <%if(menuId=='login'){ %>
+    <link rel="stylesheet" href="css/login.css" />
+
+      <%} else {if(menuId=='post'){%>
+
+        <%}else {if(menuId=='register') {%>
+          <link rel="stylesheet" href="css/register.css">
+
+        <%}}}%>
+
+
+  </head>
+  <body></body>
+</html>

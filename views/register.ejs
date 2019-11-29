@@ -1,73 +1,107 @@
 <%- include('partials/header'); -%>
 
+<div class="pt-5 mt-5">
 
-        <div class="container register">
-                <div class="row pt-5">
-                    <div class="col-md-3 register-left pt-5 text-center">
-                        <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
-                        <h3>Welcome to NeighborBook.</h3>
-                       
-                    </div>
-                    <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                            
-                            
-                        </ul>
-                        <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                <h3 class="register-heading">Register Form</h3>
-                                <div class="row register-form ">
-                                    <div class="col-md-6">
-                                        <form action="/register" method="post">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="username" placeholder="Username *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="password" placeholder="Password *" value="" />
-                                        </div>
+<div class="container register pt-5 mt-5">
+        <div class="row pt-5 mt-5">
+            <div class="col-md-3 register-left pt-5 mt-5 text-center">
+                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt=""/>
+                <h3>Welcome to NeighborBook.</h3>
+               
+            </div>
+            <div class="col-md-9 register-right">
+                <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
+                    
+                    
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                        <h3 class="register-heading">Register Form</h3>
 
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" name="email" placeholder="Email *" value="" />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="date" class="form-control" name="dob" placeholder="dob*" value="" />
-                                        </div>
-                                       
-                                        <div class="form-group">
-                                        <input type="submit" class="btnRegister"  />
+                        <div class="row register-form ">
+                            <div class="col-md-6">
+                                <form action="/register" method="post">
+
+                                <div class="form-group">
+                                    <input id="inputUsername" type="text" class="form-control" name="username" placeholder="Username *"  />
+                                    <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback"> Your username must be 3-20 characters long. </div>
+                                </div>
+
+                                <div class="form-group">
+                                        <input id="inputEmail4" type="text" class="form-control" name="email" placeholder="Email *"  />
+                                        <div class="valid-feedback">Looks good!</div>
+                            <div class="invalid-feedback">Please enter a message in the textarea. </div>
                                     </div>
 
-                                        
-                                        
+
+                                <div class="form-group">
+                                    <input id="inputPassword" type="password" class="form-control" name="password" placeholder="Password *"  />
+                                    <div class="valid-feedback">Password matched!</div>
+                            <div class="invalid-feedback">Your password must be 6-20 characters long. </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                        <input id="inputPassword4" type="password" class="form-control" name="Conformation Password" placeholder="Password Conformation  *"  />
+                                        <div class="valid-feedback">Password matched!</div>
+                            <div class="invalid-feedback">Your password must be 6-20 characters long. </div>
                                     </div>
-
-                                    
-                                </form>
-
-                                <div class="col-sm-4">
-                                        <div class="card social-block">
-                                            <div class="card-body">
-                                                <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
-                                                  <i class="fab fa-facebook"></i>
-                                                  Sign Up with Facebook
-                                                </a>
-                                              </div>
-                                          <div class="card-body">
-                                            <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
-                                              <i class="fab fa-google"></i>
-                                              Sign Up with Google
-                                            </a>
-                                          </div>
-                                        </div>
-                                      </div>
 
                                 
+                                <div class="form-group">
+                                    <input type="date" class="form-control" name="dob" placeholder="dob*" value="" />
                                 </div>
+
+
+                                <div class="form-group">
+                                    <select class="custom-select" name="gender" id="inputGroupSelect01">
+                                        <option selected>Choose...</option>
+                                        <option value="1">Male</option>
+                                        <option value="2">Female</option>
+                                        <option value="3">Others</option>
+                                      </select>
+                                </div>
+
+
+                               
+                                <div class="form-group float-right">
+                                <input type="submit" class="btnRegister"  />
                             </div>
+
+                                
+                                
+                            </div>
+
+                            
+                        </form>
+
+                        <div class="col-sm-4">
+                                <div class="card social-block">
+                                    <div class="card-body">
+                                        <a class="btn btn-block btn-social btn-facebook" href="/auth/facebook" role="button">
+                                          <i class="fab fa-facebook"></i>
+                                          Sign Up with Facebook
+                                        </a>
+                                      </div>
+                                  <div class="card-body">
+                                    <a class="btn btn-block btn-social btn-google" href="/auth/google" role="button">
+                                      <i class="fab fa-google"></i>
+                                      Sign Up with Google
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+
+                        
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+</div>
+
+</div> 
 
    <%- include('partials/footer'); -%>
