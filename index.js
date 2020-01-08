@@ -271,7 +271,8 @@ app.get("/home/delete/:id", async (req, res) => {
 });
 
 app.get("/logout", (req, res) => {
-  req.logout().then (res.redirect("/"));
+  req.logout();
+  res.redirect("/");
 });
 
 app.listen(3000, function() {
