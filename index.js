@@ -94,8 +94,8 @@ passport.use(
 passport.use(
   new FacebookStrategy(
     {
-      clientID: process.env.FACEBOOK_APP_ID,
-      clientSecret: process.env.FACEBOOK_APP_SECRET,
+      clientID: '670729766785584',
+      clientSecret: 'a3749223a2ea6f851afb505e7d8344d8',
       callbackURL: "http://localhost:3000/auth/facebook/neigborbook"
     },
     function(accessToken, refreshToken, profile, cb) {
