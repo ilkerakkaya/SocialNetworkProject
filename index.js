@@ -279,7 +279,7 @@ app.get("/logout", (req, res) => {
   res.redirect("/");
 });
 
-let port = process.env.Port;
+let port = process.env.PORT;
 if (port==null || port== ""){
   port=3000;
 }
