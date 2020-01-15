@@ -77,8 +77,8 @@ passport.deserializeUser(User.deserializeUser());
 passport.use(
   new GoogleStrategy(
     {
-      clientID: process.env.CLIENT_ID,
-      clientSecret: process.env.CLIENT_SECRET,
+      clientID: '805520931056-5g6sm3rm48klutl0b6v5729jdt14c7h4.apps.googleusercontent.com',
+      clientSecret: 'EzF1sRzpoL89TXVSSSrWp1zV',
       callbackURL: "http://localhost:3000/auth/google/neighborBook",
       userProfileURL: "https://googleapis.com/oauth2/v3/userinfo"
     },
